@@ -5,4 +5,14 @@
     xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd"
     xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd">
   <description>A PMD Ruleset for detecting racially charged and biased language</description>
+
+  <rule name="AvoidBlackListWhiteList"
+    language="java"
+    message="Avoid racially charged language"
+    class="com.signalfx.pmd.biasedlanguage.AvoidBlackListWhiteList">
+    <description>
+      Don't use blacklist/whitelist (or derivatives) in your code.
+    </description>
+    <priority>3</priority>
+  </rule>
 </ruleset>
