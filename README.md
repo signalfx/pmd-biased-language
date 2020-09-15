@@ -51,7 +51,8 @@ plugin configuration:
 # License
 
 This PMD ruleset, its rule definitions, and the rule implementations
-that it contains, are all released in the public domain.
+that it contains, are all released under the terms of the Apache
+Software License 2.0.
 
 # Links
 
