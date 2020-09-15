@@ -57,3 +57,16 @@ Software License 2.0.
 # Links
 
 * [Terminology, Power and Inclusive Language IETF Draft](https://tools.ietf.org/id/draft-knodel-terminology-02.html)
+
+# Releasing
+
+1. Deploy the snapshot:
+   ```
+   $ mvn -DperformRelease=true clean deploy
+   ```
+1. Set the version by editing the `pom.xml` file
+1. Deploy the release:
+   ```
+   $ mvn -DperformRelease=true clean deploy -P release
+   ```
+1. Edit the `pom.xml` file again to go to the next snapshot version.
