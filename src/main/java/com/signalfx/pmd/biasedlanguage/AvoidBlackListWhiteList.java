@@ -21,7 +21,7 @@ public class AvoidBlackListWhiteList extends AbstractJavaRule {
     private static final Pattern PATTERN = Pattern.compile("(black|white).?list", Pattern.CASE_INSENSITIVE);
 
     static boolean violates(String name) {
-        return PATTERN.matcher(name).find();
+        return name != null && name.length() > 0 && PATTERN.matcher(name).find();
     }
 
     @Override
