@@ -48,6 +48,22 @@ plugin configuration:
 </plugin>
 ```
 
+# Rule priority
+
+The default priority of the rules in this ruleset is 3, like most PMD
+rules. PMD also uses a default `failurePriority` of 5, meaning all rules
+fail your build. If you want to use this ruleset as a warning only, you
+can override the priority of its rules to 5:
+
+```xml
+<rule ref="pmd-biased-language/pmd.xml">
+  <priority>5</priority>
+</rule>
+```
+
+And set `<failurePriority>4</failurePriority>` in the configuration of
+your `maven-pmd-plugin` execution.
+
 # License
 
 This PMD ruleset, its rule definitions, and the rule implementations
