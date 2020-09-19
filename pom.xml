@@ -3,7 +3,7 @@
 
   <groupId>com.signalfx.public</groupId>
   <artifactId>pmd-biased-language</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.0.1</version>
   <packaging>jar</packaging>
 
   <name>pmd-biased-language</name>

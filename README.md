@@ -31,7 +31,7 @@ plugin configuration:
     <dependency>
       <groupId>com.signalfx.public</groupId>
       <artifactId>pmd-biased-language</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.1</version>
     </dependency>
   </dependencies>
   <configuration>
