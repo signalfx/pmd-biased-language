@@ -8,7 +8,7 @@
 
   <rule name="AvoidBiasedLanguage"
     language="java"
-    message="Avoid the use racially charged or biased language"
+    message="Avoid the use of racially charged or biased language"
     class="com.signalfx.pmd.biasedlanguage.AvoidBiasedLanguage">
     <description>
       This rules warns about the use of racially charged or biased language in
