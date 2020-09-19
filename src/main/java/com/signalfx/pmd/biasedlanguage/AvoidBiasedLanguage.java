@@ -9,16 +9,18 @@ import net.sourceforge.pmd.lang.java.ast.JavaNode;
 import net.sourceforge.pmd.lang.java.rule.AbstractJavaRule;
 
 /**
- * Attempts to identify usages of blacklist/whitelist.
+ * Attempts to identify usages of racially charged and biased language in Java code.
  *
- * Blacklist and whitelist reflect racially charged language for which much better alternatives exist and should be used
- * instead. This rule matches on the <code>/(black|white).?list/</code> regex (case insensitive).
+ * Blacklist/whitelist and master/slave (and their derivatives) reflect racially charged language
+ * for which much better alternatives exist and should be used instead.
  *
  * @author mpetazzoni
+ * @see #REGEX
  */
-public class AvoidBlackListWhiteList extends AbstractJavaRule {
+public class AvoidBiasedLanguage extends AbstractJavaRule {
 
-    private static final Pattern PATTERN = Pattern.compile("(black|white).?list", Pattern.CASE_INSENSITIVE);
+    private static final String REGEX = "((black|white).?list|(master|slave))";
+    private static final Pattern PATTERN = Pattern.compile(REGEX, Pattern.CASE_INSENSITIVE);
 
     static boolean violates(String name) {
         return name != null && name.length() > 0 && PATTERN.matcher(name).find();

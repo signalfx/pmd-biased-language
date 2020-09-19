@@ -6,12 +6,16 @@
     xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd">
   <description>A PMD Ruleset for detecting racially charged and biased language</description>
 
-  <rule name="AvoidBlackListWhiteList"
+  <rule name="AvoidBiasedLanguage"
     language="java"
-    message="Avoid racially charged language"
-    class="com.signalfx.pmd.biasedlanguage.AvoidBlackListWhiteList">
+    message="Avoid the use racially charged or biased language"
+    class="com.signalfx.pmd.biasedlanguage.AvoidBiasedLanguage">
     <description>
-      Don't use blacklist/whitelist (or derivatives) in your code.
+      This rules warns about the use of racially charged or biased language in
+      Java code, variable names, method names, class names, etc. It detects the
+      use of blacklist/whitelist and master/slave names (or derivatives). Better
+      alternatives exist as described in IETF's Terminology, Power and Inclusive
+      Language document (draft-knodel-terminology-02).
     </description>
     <priority>3</priority>
   </rule>

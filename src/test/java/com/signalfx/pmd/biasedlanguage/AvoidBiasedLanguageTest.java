@@ -3,16 +3,16 @@
  */
 package com.signalfx.pmd.biasedlanguage;
 
-import static com.signalfx.pmd.biasedlanguage.AvoidBlackListWhiteList.violates;
+import static com.signalfx.pmd.biasedlanguage.AvoidBiasedLanguage.violates;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-public class AvoidBlackListWhiteListTest {
+public class AvoidBiasedLanguageTest {
 
     @Test
-    public void testViolates() {
+    public void testViolatesBlacklist() {
         assertTrue(violates("blacklist"));
         assertTrue(violates("Blacklist"));
         assertTrue(violates("BlackList"));
@@ -22,7 +22,14 @@ public class AvoidBlackListWhiteListTest {
         assertTrue(violates("Black_List"));
         assertTrue(violates("black_List"));
         assertTrue(violates("black.list"));
+        assertTrue(violates("getBlackList"));
+        assertTrue(violates("getBlackLists"));
+        assertTrue(violates("getUserBlackList"));
+        assertTrue(violates("getUserBlackLists"));
+    }
 
+    @Test
+    public void testViolatesWhitelist() {
         assertTrue(violates("whitelist"));
         assertTrue(violates("Whitelist"));
         assertTrue(violates("WhiteList"));
@@ -32,10 +39,23 @@ public class AvoidBlackListWhiteListTest {
         assertTrue(violates("White_List"));
         assertTrue(violates("white_List"));
         assertTrue(violates("white.list"));
-
-        assertTrue(violates("getBlackList"));
-        assertTrue(violates("getUserBlackList"));
+        assertTrue(violates("getWhitelist"));
+        assertTrue(violates("getWhitelists"));
         assertTrue(violates("getUserWhitelist"));
+        assertTrue(violates("getUserWhitelists"));
+    }
+
+    @Test
+    public void testViolatesMaster() {
+        assertTrue(violates("getMasterNodeAddress"));
+        assertTrue(violates("SERVICE_MASTER"));
+        assertTrue(violates("blob/master/foo.bar"));
+    }
+
+    @Test
+    public void testViolatesSlave() {
+        assertTrue(violates("getSlaveAddresses"));
+        assertTrue(violates("slaveNode"));
     }
 
     @Test
